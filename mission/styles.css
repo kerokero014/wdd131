@@ -10,6 +10,11 @@
   --subtitle: #006eb6;
 }
 
+hr{
+  width: 500px;
+  margin: 0 55px;
+}
+
 h1 {
   font-weight: 700;
   margin-top: 45px;
@@ -20,7 +25,7 @@ h1 {
 h2 {
   color: var(--subtitle);
   font-size: 17px;
-  margin: 1rem;
+  margin:0 2rem;
   text-transform: uppercase;
 }
 
