@@ -10,7 +10,7 @@
   --subtitle: #006eb6;
 }
 
-hr{
+hr {
   width: 500px;
   margin: 0 55px;
 }
@@ -25,7 +25,7 @@ h1 {
 h2 {
   color: var(--subtitle);
   font-size: 17px;
-  margin:0 2rem;
+  margin: 0 2rem;
   text-transform: uppercase;
 }
 
@@ -44,6 +44,23 @@ main p {
 main p em {
   font-style: italic;
   font-size: 1.2rem;
+}
+
+label {
+  display: block;
+  margin-bottom: 10px;
+  font-size: 16px;
+  color: #333;
+}
+
+select {
+  width: 75px;
+  height: 30px;
+  font-size: 16px;
+  color: #333;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 5px;
 }
 
 .does-list {
@@ -72,4 +89,63 @@ img {
   width: 30%;
   display: block;
   margin: 25px auto;
+}
+
+/* Dark mode styles */
+
+.dark-mode {
+  background: #333;
+  color: white;
+}
+
+.dark-mode label {
+  color: white;
+}
+
+.dark-mode h1 {
+  color: white;
+}
+
+.dark-mode h2 {
+  color: var(--subtitle);
+}
+
+.dark-mode hr {
+  border-color: white;
+}
+
+.dark-mode .content {
+  border-color: white;
+}
+
+.dark-mode .content {
+  background: #333;
+}
+
+.dark-mode .content h1 {
+  color: white;
+}
+
+.dark-mode .content h2 {
+  color: var(--subtitle);
+}
+
+.dark-mode .content p {
+  color: white;
+}
+
+.dark-mode .content label {
+  color: white;
+}
+
+.dark-mode .content select {
+  color: white;
+}
+
+.dark-mode .content .does-list {
+  color: white;
+}
+
+.dark-mode .content .does-list li {
+  color: white;
 }
