@@ -85,6 +85,7 @@ footer {
   }
   .Menu {
     font-size: 20px;
+    display: none;
   }
   nav ul {
     display: flex;
@@ -104,10 +105,12 @@ footer {
   header {
     font-size: 20px;
   }
-  .Menu {
+  header nav ul li .Menu {
     font-size: 20px;
+    display: none;
   }
-  nav ul {
+
+  nav ul{
     display: flex;
     flex-direction: row;
     justify-content: center;
