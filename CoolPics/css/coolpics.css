@@ -35,9 +35,9 @@ nav ul li a:visited {
   text-decoration: underline;
   margin: 10px;
 }
-.Menu {
-  font-size: 49px;
-  font-weight: bold;
+
+.menu-items {
+  display: none;
 }
 
 /*Gallery*/
@@ -81,12 +81,13 @@ footer {
 /* medium view */
 @media (max-width: 700px) {
   header {
-    font-size: 20px;
+    font-size: 30px;
   }
-  .Menu {
-    font-size: 20px;
-    display: none;
+  .menu-items {
+    display: block;
+    font-size: 40px;
   }
+
   nav ul {
     display: flex;
     flex-direction: row;
@@ -102,19 +103,27 @@ footer {
 
 /* large view */
 @media (min-width: 1024px) {
+  
+  header nav ul li a.toggle-menu {
+    display: none;
+  }
   header {
     font-size: 20px;
   }
-  header nav ul li .Menu {
-    font-size: 20px;
-    display: none;
-  }
 
-  nav ul{
+  header nav ul .menu-items {
+    display: block;
     display: flex;
     flex-direction: row;
     justify-content: center;
+    padding: 0 30px;
   }
+
+  /*nav ul {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+  }*/
 
   section h2 {
     font-size: 30px;
