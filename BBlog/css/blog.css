@@ -1,0 +1,23 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  list-style: none;
+}
+
+header nav ul li a {
+  text-decoration: none;
+  color: rgb(198, 73, 50);
+}
+
+header nav ul li a:hover {
+  color: rgb(255, 255, 255);
+}
+
+header nav ul li a:active {
+  color: rgb(255, 255, 255);
+}
+
+header nav ul li a:focus {
+  color: rgb(255, 255, 255);
+}
