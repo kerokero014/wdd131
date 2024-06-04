@@ -1,58 +1,140 @@
 body {
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     height: 100vh;
-    margin: 0;
     background-color: #f0f0f0;
 }
 
+.total {
+    margin-bottom: 10px;
+    font-size: 20px;
+}
+
+.card-container {
+    position: relative;
+    width: 400px;
+}
+
+.front__card,
 .back__card {
-    background-color: white;
+    width: 100%;
     padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    width: 300px;
+    border-radius: 15px;
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+    color: #141414;
+}
+
+.front__card {
+    background-color: #cccccc;
+    z-index: 1;
 }
 
 .card__image {
     display: flex;
     justify-content: flex-end;
-    margin-bottom: 20px;
 }
 
 .credit_card__form {
+    margin-top: 20px;
     display: flex;
     flex-direction: column;
 }
 
 .credit_card__form label {
+    font-size: 15px;
     margin-bottom: 5px;
-    font-weight: bold;
+    display: block;
 }
 
 .credit_card__form input {
     padding: 10px;
-    margin-bottom: 15px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    font-size: 14px;
-}
-
-.credit_card__form input::placeholder {
-    color: #aaa;
-}
-
-.credit_card__form button {
-    padding: 10px;
-    background-color: #007bff;
-    color: white;
     border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    font-size: 16px;
+    border-radius: 5px;
+    margin-bottom: 15px;
+    width: calc(100% - 22px);
 }
 
-.credit_card__form button:hover {
-    background-color: #0056b3;
+.holder-expiry {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.holder-item,
+.expiry-item {
+    width: 48%;
+}
+
+.expiry-inputs {
+    display: flex;
+    justify-content: space-between;
+}
+
+.expiry-inputs input {
+    width: 30%;
+}
+
+#card-holder {
+    width: 80%;
+}
+
+.back__card {
+    position: absolute;
+    top: 30px;
+    left: 20px;
+    background-color: #cccccc;
+    color: black;
+}
+
+button {
+    margin-top: 150px;
+    width: 100px;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: #f6c23e;
+    color: black;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #3e3520;
+    color: white;
+}
+
+.back__card {
+    z-index: -1;
+    height: 190px;
+    top: 80px;
+    left: 110px;
+    justify-content: right;
+}
+
+svg rect {
+    width: 420px;
+    height: 60px;
+}
+
+.back__card form {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+}
+
+.back__card label {
+    font-size: 15px;
+    margin-bottom: 5px;
+}
+
+.back__card input {
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    margin-bottom: 15px;
+    width: 40px;
 }
