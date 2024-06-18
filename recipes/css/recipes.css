@@ -193,13 +193,26 @@ footer a:hover {
     .recipe-card {
         display: flex;
         flex-direction: row;
+        align-items: center;
+    }
+
+    .recipe__content {
+        display: flex;
+        flex-direction: column;
         justify-content: space-between;
         align-items: center;
     }
 
+    .recipe__content h2 {
+        font-size: 34px;
+    }
+
+    .recipe__content p {
+        font-size: 20px;
+    }
+
     .recipe__description {
         display: block;
-        flex-grow: 1;
     }
 
     /************************
