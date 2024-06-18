@@ -84,7 +84,7 @@ body {
     padding: 15px;
 }
 
-.recipe__description {
+.recipe__decsription {
     display: none;
 }
 
@@ -218,6 +218,11 @@ footer a:hover {
     /************************
      * Footer
      ************************/
+
+    footer a {
+        float: left;
+    }
+
 
     footer .social {
         display: flex;
