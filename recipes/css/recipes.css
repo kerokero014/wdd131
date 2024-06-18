@@ -64,7 +64,6 @@ button img {
 /************************
  * Recipe Lists 
  ************************/
-
 body {
     display: flex;
     flex-direction: column;
@@ -96,7 +95,6 @@ span {
 /************************
  * Footer
  ************************/
-
 footer {
     text-align: center;
     padding: 20px;
@@ -129,7 +127,6 @@ footer a:hover {
     /************************
      * Header
      ************************/
-
     header img {
         max-width: 100px;
         margin-bottom: 0;
@@ -166,7 +163,6 @@ footer a:hover {
     /************************
      * Footer
      ************************/
-
     footer .social a {
         margin: 0 10px;
     }
@@ -181,7 +177,6 @@ footer a:hover {
         text-decoration: none;
         font-size: 14px;
     }
-
 }
 
 @media screen and (min-width: 1024px) {
@@ -189,7 +184,6 @@ footer a:hover {
     /************************
      * Recipe Lists 
      ************************/
-
     .recipe-card {
         display: flex;
         flex-direction: row;
@@ -218,11 +212,9 @@ footer a:hover {
     /************************
      * Footer
      ************************/
-
     footer a {
         float: left;
     }
-
 
     footer .social {
         display: flex;
