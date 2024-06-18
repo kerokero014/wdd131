@@ -47,7 +47,6 @@ button {
     background-color: #f4f4f4;
     border: 1px solid #e1e1e1;
     padding: 0 10px;
-    border-radius: 15px;
 }
 
 button {
@@ -62,11 +61,9 @@ button img {
     width: 30px;
 }
 
-
-
 /************************
  * Recipe Lists 
-/************************/
+ ************************/
 
 body {
     display: flex;
@@ -79,7 +76,6 @@ body {
     border: 1px solid #ccc;
     padding: 16px;
     margin: 16px;
-    border-radius: 8px;
 }
 
 .recipe-card img {
@@ -88,7 +84,7 @@ body {
     padding: 15px;
 }
 
-.recipe__decsription {
+.recipe__description {
     display: none;
 }
 
@@ -99,7 +95,7 @@ span {
 
 /************************
  * Footer
-/************************/
+ ************************/
 
 footer {
     text-align: center;
@@ -128,12 +124,11 @@ footer a:hover {
     text-decoration: underline;
 }
 
-
 @media screen and (min-width: 768px) {
 
     /************************
      * Header
-    /************************/
+     ************************/
 
     header img {
         max-width: 100px;
@@ -161,7 +156,6 @@ footer a:hover {
         background-color: #f4f4f4;
         border: 1px solid #e1e1e1;
         padding: 0 10px;
-        border-radius: 15px;
     }
 
     button img {
@@ -169,10 +163,9 @@ footer a:hover {
         width: 30px;
     }
 
-
     /************************
      * Footer
-    /************************/
+     ************************/
 
     footer .social a {
         margin: 0 10px;
@@ -194,29 +187,37 @@ footer a:hover {
 @media screen and (min-width: 1024px) {
 
     /************************
-     * Recipe Lists
-    /************************/
+     * Recipe Lists 
+     ************************/
 
     .recipe-card {
         display: flex;
         flex-direction: row;
         justify-content: space-between;
+        align-items: center;
     }
 
-    .recipe__decsription {
+    .recipe__description {
         display: block;
+        flex-grow: 1;
     }
 
     /************************
      * Footer
-    /************************/
+     ************************/
+
+    footer .social {
+        display: flex;
+        justify-content: center;
+        float: right;
+    }
 
     footer .social a {
-        margin: 0 20px;
+        margin: 0 10px;
     }
 
     footer .social img {
-        width: 60px;
-        height: 60px;
+        width: 40px;
+        height: 40px;
     }
 }
