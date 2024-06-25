@@ -1,7 +1,6 @@
 import recipes from "./recipes.mjs";
 
 function tagsTemplate(tags) {
-    // Transform the array of tags into HTML
     let html = '<div class="tags">';
     tags.forEach(tag => {
         html += `<span class="tag">${tag}</span>`;
@@ -11,7 +10,6 @@ function tagsTemplate(tags) {
 }
 
 function ratingTemplate(rating) {
-    // Begin building an HTML string for the rating
     let html = `<span class="rating" role="img" aria-label="Rating: ${rating} out of 5 stars">`;
     for (let i = 1; i <= 5; i++) {
         if (i <= rating) {
@@ -27,7 +25,6 @@ function ratingTemplate(rating) {
 const createRecipeCard = (recipe) => {
     return `
         <div class="recipe-card">
-            
             <img src="${recipe.image}" alt="${recipe.name}">
             <div class="recipe__content">
             ${tagsTemplate(recipe.tags)}
@@ -41,22 +38,47 @@ const createRecipeCard = (recipe) => {
     `;
 };
 
-const renderRecipe = (recipe) => {
+const renderRecipes = (recipesList) => {
     const recipesContainer = document.getElementById("recipes-container");
-    recipesContainer.innerHTML = createRecipeCard(recipe);
+    recipesContainer.innerHTML = recipesList.map(recipe => createRecipeCard(recipe)).join('');
 };
 
-// Function to select a random recipe
-const selectRandomRecipe = () => {
-    const randomIndex = Math.floor(Math.random() * recipes.length);
-    return recipes[randomIndex];
-};
+function filter(query) {
+    const filtered = recipes.filter(recipe => {
+        const lowerCaseQuery = query.toLowerCase();
+        return (
+            recipe.name.toLowerCase().includes(lowerCaseQuery) ||
+            recipe.description.toLowerCase().includes(lowerCaseQuery) ||
+            (recipe.tags && recipe.tags.some(tag => tag.toLowerCase().includes(lowerCaseQuery))) ||
+            (recipe.ingredients && recipe.ingredients.some(ingredient => ingredient.toLowerCase().includes(lowerCaseQuery)))
+        );
+    });
 
-// Call the render function with a random recipe when the DOM is fully loaded
+    const sorted = filtered.sort((a, b) => a.name.localeCompare(b.name));
+    return sorted;
+}
+
+function searchHandler(e) {
+    e.preventDefault();
+    const searchInput = document.getElementById('search').value.toLowerCase();
+    const filteredRecipes = filter(searchInput);
+    renderRecipes(filteredRecipes);
+}
+
 document.addEventListener("DOMContentLoaded", () => {
+    // Assuming the intention is to display a random recipe on page load
+    // We need to define the `selectRandomRecipe` function to select a random recipe from the recipes list
+    const selectRandomRecipe = () => recipes[Math.floor(Math.random() * recipes.length)];
+
+    // Fix: Changed `renderRecipe` to `renderRecipes` and passed an array with the selected recipe
+    // as `renderRecipes` expects an array of recipes
     const selectedRecipe = selectRandomRecipe();
-    renderRecipe(selectedRecipe);
+    renderRecipes([selectedRecipe]);
+
+    const form = document.querySelector('form');
+    form.addEventListener('submit', searchHandler);
 });
+
 
 
 // <p><strong>Author:</strong> ${recipe.author}</p>
