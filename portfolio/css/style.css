@@ -103,6 +103,8 @@ nav a.active {
 .title-tech {
   font-size: 1.5em;
   margin-bottom: 5px;
+  display: block;
+  text-align: center;
 }
 
 .icons-grid {
@@ -158,8 +160,8 @@ nav a.active {
   height: 100%;
   background-color: #04aa6d00;
   transform: scaleY(1);
-  transform-origin: top; 
-  transition: transform 0.4s ease, background-color 0.4s ease; 
+  transform-origin: top;
+  transition: transform 0.4s ease, background-color 0.4s ease;
 }
 
 #dynamic-text.flipping::before {
@@ -177,6 +179,38 @@ nav a.active {
   opacity: 0;
   transform: translateY(-100%); /* Moves up as it fades out */
   transition-delay: 0.25s; /* Delays the opacity and transform transitions for a smoother effect */
+}
+
+.icons-grid i {
+  font-size: 2em;
+  color: #333;
+  margin: 10px;
+  transition: color 0.3s ease, transform 0.3s ease;
+  position: relative; /* Needed for tooltip positioning */
+}
+
+.icons-grid i:hover {
+  color: #4c04aa;
+  transform: scale(1.2); /* Slightly enlarges the icon on hover */
+}
+
+.tooltip {
+  position: absolute;
+  bottom: 125%; /* Position the tooltip above the icon */
+  left: 50%;
+  transform: translateX(-50%);
+  background: #333;
+  color: #fff;
+  padding: 5px;
+  border-radius: 5px;
+  font-size: 0.5em;
+  white-space: nowrap;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.icons-grid i.show-tooltip .tooltip {
+  opacity: 1;
 }
 
 /*****    *****/
@@ -229,7 +263,7 @@ nav a.active {
   }
 
   nav a {
-    font-size: 18px;
+    font-size: 25px;
     padding: 20px 24px;
   }
 
@@ -250,6 +284,11 @@ nav a.active {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+  }
+
+  #dynamic-text {
+    font-size: 1em;
+    margin-top: 5px;
   }
 
   .hero h1 {
@@ -276,6 +315,6 @@ nav a.active {
 
   .techs {
     padding: 20px;
-    margin: 10px;
+    margin: 20px;
   }
 }

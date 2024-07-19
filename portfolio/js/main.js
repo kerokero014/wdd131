@@ -153,3 +153,26 @@ document.addEventListener('DOMContentLoaded', () => {
     // Initial text setup
     changeText();
 });
+
+document.addEventListener('DOMContentLoaded', () => {
+    const icons = document.querySelectorAll('.icons-grid i');
+
+    icons.forEach(icon => {
+        // Create a tooltip element
+        const tooltip = document.createElement('div');
+        tooltip.className = 'tooltip';
+        tooltip.textContent = icon.getAttribute('data-tooltip');
+        icon.appendChild(tooltip);
+
+        // Add event listeners for hover
+        icon.addEventListener('mouseover', () => {
+            icon.classList.add('show-tooltip');
+        });
+
+        icon.addEventListener('mouseout', () => {
+            icon.classList.remove('show-tooltip');
+        });
+
+        // Additional event listeners or modifications can be added here
+    });
+});
