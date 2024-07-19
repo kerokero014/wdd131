@@ -111,3 +111,46 @@ document.addEventListener('DOMContentLoaded', () => {
         retina_detect: true
     });
 });
+
+document.addEventListener('DOMContentLoaded', () => {
+    const phrases = [
+        'Kevin Mendoza',
+        'a Software Engineer',
+        'a Web Developer    ',
+        'a Backend Developer',
+        'a Frontend Developer',
+        'a Full Stack Developer',
+        'a chef',
+    ];
+
+    const dynamicText = document.getElementById('dynamic-text');
+    let currentIndex = 0;
+
+    function changeText() {
+        // Create a new span for the current phrase
+        const newSpan = document.createElement('span');
+        newSpan.textContent = phrases[currentIndex];
+
+        // Add the new span to the container
+        dynamicText.innerHTML = '';
+        dynamicText.appendChild(newSpan);
+
+        // Trigger the flipping effect
+        setTimeout(() => {
+            dynamicText.classList.add('flipping');
+            setTimeout(() => {
+                dynamicText.classList.remove('flipping');
+                newSpan.classList.add('hidden');
+            }, 500); // Match with CSS transition duration
+        }, 100); // Short delay to ensure the new span is added before the effect
+
+        // Update the index for the next phrase
+        currentIndex = (currentIndex + 1) % phrases.length;
+    }
+
+    // Change text every 3 seconds
+    setInterval(changeText, 3000);
+
+    // Initial text setup
+    changeText();
+});

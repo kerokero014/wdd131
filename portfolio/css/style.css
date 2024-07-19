@@ -138,6 +138,47 @@ nav a.active {
   left: 0;
   z-index: -1;
 }
+
+#dynamic-text {
+  display: inline-block;
+  font-weight: bold;
+  color: #4c04aa;
+  position: relative;
+  overflow: hidden;
+  height: 1.2em;
+  vertical-align: top;
+}
+
+#dynamic-text::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #04aa6d00;
+  transform: scaleY(1);
+  transform-origin: top; 
+  transition: transform 0.4s ease, background-color 0.4s ease; 
+}
+
+#dynamic-text.flipping::before {
+  transform: scaleY(0); /* Scales down to hide */
+  transition-delay: 0.25s; /* Delays the start of this transition for a smoother effect */
+}
+
+#dynamic-text span {
+  display: block;
+  transition: opacity 0.5s ease, transform 0.5s ease;
+  transform: translateY(0); /* Starts from its original position */
+}
+
+#dynamic-text span.hidden {
+  opacity: 0;
+  transform: translateY(-100%); /* Moves up as it fades out */
+  transition-delay: 0.25s; /* Delays the opacity and transform transitions for a smoother effect */
+}
+
 /*****    *****/
 
 @media screen and (min-width: 768px) and (max-width: 1024px) {
