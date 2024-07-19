@@ -119,8 +119,7 @@ document.addEventListener('DOMContentLoaded', () => {
         'a Web Developer    ',
         'a Backend Developer',
         'a Frontend Developer',
-        'a Full Stack Developer',
-        'a chef',
+        'a Full Stack Developer'
     ];
 
     const dynamicText = document.getElementById('dynamic-text');
